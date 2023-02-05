@@ -1,0 +1,39 @@
+{% extends "logged_in.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='./groups/styles.css')}}">
+<title>Groupe actuel | La Salle</title>
+{% endblock %}
+
+{% block content %}
+<form action="/find_new_group" method="GET" class="invisible" id="find_new_group"></form>
+<div class="all">
+    <div class="inv">
+        <h2>Votre groupe actuel</h2>
+        <input type='submit' class="find_new_group_btn" value="Trouver un autre groupe" form="find_new_group">
+    </div>
+    <div class="users">
+        {% for user in users %}
+        <a href="/view_user/{{user['username']}}">
+            <div class="profile_photo_display">
+                {% if user['profile_photo'] %}
+                <img src="{{user['profile_photo']}}" alt="user profile photo" class="profile_photo_groups_a">
+                {% else %}
+                <p class="first_letter">{{ user['username'][0].upper() }}</p>
+                {% endif %}
+            </div>
+            <div class="username_name">
+                <p class="username">{{ user['username'] }}</p>
+                <p class="name">{{ user['name'] }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static', filename='./groups/main.js')}}"></script>
+
+<script src="{{url_for('static', filename='./logged_in1.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,38 @@
+:root {
+    --white: #FFFFFF;
+    --grey: #dbdbdb;
+    --black: black;
+    --blue: #0d6efd;
+    --darkGrey: #73777B;
+
+    --bold: 600;
+    --med: 300;
+    --light: 100;
+
+    --font: 'Kanit', sans-serif;
+
+    --xxl: 60px;
+    --xl: 40px;
+    --l: 30px;
+    --m: 20px;
+    --s: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: var(--font);
+}
+
+.invisible {
+    display: none;
+}
+
+input[type='submit']:hover {
+    cursor: pointer;
+}
+
+button {
+    background-color: transparent;
+}

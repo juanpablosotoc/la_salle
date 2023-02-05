@@ -1,0 +1,131 @@
+.search_div {
+    width: 50%;
+    margin: 0 0 40px 50%;
+    transform: translateX(-50%);
+    border: 1px solid var(--grey);
+}
+
+.search_div > div {
+    width: 70%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.search_input_div {
+    border-bottom: 1px solid var(--grey);
+    padding: 30px 0;
+    display: flex;
+    gap: 20px;
+}
+
+.search_input_div input[type='text'] {
+    width: 70%;
+    border: 1px solid var(--grey);
+    padding: 0 10px;
+}
+.search_input_div button {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+    font-size: var(--s);
+    font-weight: var(--med);
+    padding: 0 20px 0 20px;
+    height: 30px;
+}
+
+.search_input_div button:hover {
+    cursor: pointer;
+}
+
+.recent_title_div {
+    margin-top: 40px;
+}
+
+.recent_title_div h2 {
+    width: 70%;
+}
+.recent_title_div button {
+    position: absolute;
+    right: 0;
+}
+
+.close, .trash_can{
+    height: 30px;
+    width: auto;
+}
+
+.close:hover, .trash_can:hover {
+    cursor: pointer;
+}
+
+.recents {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.recent_search {
+    border-bottom: 1px solid var(--grey);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recent_search a {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.recent_search_name {
+    color: var(--darkGrey);
+}
+
+.username_name_div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile_photo_display {
+    background-color: var(--grey);
+}
+
+.first_letter {
+    font-weight: var(--bold);
+    color: var(--white);
+}
+
+.no_previous_searches, .no_user_found {
+    margin: 20px 0;
+}
+
+.search_profile_a {
+    text-decoration: none;
+    color: var(--black);
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.search_name {
+    color: var(--darkGrey);
+}
+
+@media (max-width: 750px) {
+    .search_div {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .search_input_div {
+        flex-direction: column;
+    }
+
+    .search_input_div input {
+        height: 30px;
+        width: 100%;
+    }
+}

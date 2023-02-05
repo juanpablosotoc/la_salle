@@ -1,0 +1,61 @@
+{% extends "logged_in.html" %}
+
+{% block head %}
+{% block head_x %}
+{% endblock %} 
+<link rel="stylesheet" href="{{url_for('static', filename='./view_user_template/styles.css')}}">
+<title>La Salle</title>
+{% endblock %}
+
+{% block content %}
+{% block go_back %} 
+{% endblock %} 
+<div class="profile_view">
+    <div class="top_section">
+        <div class="personal_photo_display">
+            {% if his_profile_photo_base64 %}
+            <img src="{{his_profile_photo_base64}}" alt="profile photo" class="personal_profile_photo">
+            {% else %}
+            <p class="profile_photo_letter">{{his_username[0].upper()}}</p>
+            {% endif %}
+        </div>
+        <p class="username">@{{his_username}}</p>
+        <p>{{his_name}}</p>
+        {% if his_bio %}
+        <p>{{his_bio}}</p>
+        {% endif %}
+    </div>
+    <div class="other_info_div">
+        <p class="internship_info">{{his_internship}}</p>
+        <table>
+            <tr>
+                <th>Lundi</th>
+                <th>Mardi</th>
+                <th>Mercredi</th>
+            </tr>
+            <tr>
+                <td>{{lundi}}</td>
+                <td>{{mardi}}</td>
+                <td>{{mercredi}}</td>
+            </tr>
+            <tr>
+                <th>Jeudi</th>
+                <th>Vendredi</th>
+            </tr>
+            <tr>
+                <td>{{jeudi}}</td>
+                <td>{{vendredi}}</td>
+            </tr>
+        </table>
+    </div>
+    {% block edit_profile %}
+    {% endblock %}
+</div>
+{% endblock %}
+
+{% block js %}
+{% block js_x %}
+{% endblock %} 
+<script src="{{url_for('static', filename='./logged_in1.js')}}"></script>
+
+{% endblock %}

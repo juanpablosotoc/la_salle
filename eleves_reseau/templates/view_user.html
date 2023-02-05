@@ -1,0 +1,24 @@
+
+{% extends "view_user_template.html" %}
+
+{% block head_x %}
+<link rel="stylesheet" href="{{url_for('static', filename='./view_user/styles.css')}}">
+{% endblock %}
+
+{% block go_back %} 
+{% if go_back == false %}
+<a class="go_back" href="{{url_for('search')}}"><img src="{{url_for('static', filename='./images/arrow.png')}}" alt="go back arrow"></a>
+{% else %}
+<button onclick="history.back()" class="go_back"><img src="{{url_for('static', filename='./images/arrow.png')}}" alt="go back arrow"></button>
+{% endif %}
+{% endblock %} 
+
+{% block edit_profile %}
+{% endblock %}
+
+{% block js_x %}
+<script src="{{url_for('static', filename='./view_user/main.js')}}"></script>
+
+<script src="{{url_for('static', filename='./logged_in.js')}}"></script>
+
+{% endblock %}

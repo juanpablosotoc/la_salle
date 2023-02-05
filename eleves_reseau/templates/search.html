@@ -1,0 +1,53 @@
+{% extends "logged_in.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='./search/styles.css')}}">
+<title>La Salle</title>
+{% endblock %}
+
+{% block content %}
+<div class="search_div">
+    <div class="search_input_div">
+        <input type="text" name="search_username" id="search_username" placeholder="entrer le nom de l'utilisateur">
+        <button class="search_user_button">Recherche</button>
+    </div>
+    <div class="recent_searches_div">
+            <div class="recent_title_div">
+                <button class="delete_all_searches_button"><img src="{{url_for('static', filename='./images/close.png')}}" alt="cross image" class="close"></button>    
+                <h2 class="recents">Recherches récentes</h2>
+            </div>
+            {% if recent_searches|length == 0 %}
+            <p class="no_previous_searches">Pas des recherches précédentes</p>
+            {% else %}
+            <p class="no_previous_searches invisible">Pas des recherches précédentes</p>
+            {% endif %}
+            {% for recent_search in recent_searches %}
+                <div class="recent_search">
+                    <a href="/search/{{recent_search['username']}}">
+                        <div class="profile_photo_display">
+                            {% if recent_search['profile_photo'] %}
+                            <img src="{{recent_search['profile_photo']}}" alt="profile photo" class="profile_photo">
+                            {% else %} 
+                            <p class="first_letter">{{recent_search['username'][0].upper()}}</p>
+                            {% endif %}
+                        </div>
+                        <div class="username_name_div">
+                            <p class="recent_search_usermame">{{recent_search['username']}}</p>
+                            <p class="recent_search_name">{{recent_search['name']}}</p>
+                        </div>
+                    </a>
+                    <button class="delete_specific_searches_button"><img src="{{url_for('static', filename='./images/trash_can.png')}}" alt="trash can png" class="trash_can"></button>
+                </div>
+            {% endfor %}
+    </div>
+    <div class="searches_by_word_div">
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static', filename='./search/main.js')}}"></script>
+
+<script src="{{url_for('static', filename='./logged_in1.js')}}"></script>
+
+{% endblock %}

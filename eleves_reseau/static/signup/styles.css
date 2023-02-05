@@ -1,0 +1,69 @@
+
+h1 {
+    font-weight: var(--light);
+}
+
+h1, h2 {
+    font-size: var(--l);
+}
+
+h1, h2, .invitation {
+    text-align: center;
+    padding: 30px 0 20px 0;
+}
+
+.content {
+    background-color: var(--white);
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 0 40px 50%;
+    transform: translateX(-50%);
+    border: solid 1px var(--grey);
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+input[type='text'], input[type='password'] {
+    background-color: transparent;
+    padding: 3px;
+    border: solid var(--black) 1px;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    height: 3ch;
+}
+
+input[type='text']:focus, input[type='password']:focus {
+    background-color: var(--white);
+}
+
+input[type='submit'] {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+    height: 30px;
+    width: 100%;
+    margin: 20px 0 0 50%;
+    transform: translateX(-50%);
+    font-size: var(--s);
+    font-weight: var(--med);
+}
+
+input[type='radio'] {
+    margin-top: 10px;
+}
+
+input[type='submit']:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 460px) {
+    .content{
+        max-width: 100%;
+
+        margin: 0 0 40px 0;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='./logged_in.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='./general.css')}}">
+
+    <link rel="icon" href="{{url_for('static', filename='./images/group.png')}}">
+    {% block head %}
+    {% endblock %}
+
+</head>
+<body>
+    <input type="hidden" id="root_url">
+    <nav>
+        <a href="/account" class="modify_account">
+            <div class="personal_photo_display profile_photo_display">
+                {% if profile_photo_base64 %}
+                <img src="{{profile_photo_base64}}" alt="profile photo" class="personal_profile_photo">
+                {% else %}
+                <p class="profile_photo_letter">{{username[0].upper()}}</p>
+                {% endif %}
+            </div>
+        </a>
+        <a href="/search">
+            <img src="{{url_for('static', filename='./images/search.png')}}" alt="Searching Bar" class="searching_bar_icon">
+        </a>
+        <a href="{{url_for('group')}}">
+            <img src="{{url_for('static', filename='./images/networking.png')}}" alt="Networking image" class="networking_icon">
+        </a>
+    </nav>
+    
+
+    {% block content %}
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+</body>
+</html>

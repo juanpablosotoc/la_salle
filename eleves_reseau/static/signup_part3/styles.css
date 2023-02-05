@@ -1,0 +1,99 @@
+:root {
+    --profile_photo_width_height: 40vh;
+    --profile_photo_background_color: black;
+}
+
+h1 {
+    text-align: center;
+    padding: 40px 0 40px 0;
+}
+
+.form {
+    border: solid 1px var(--grey);
+    width: 50%;
+    margin: 0 0 30px 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_photo_display {
+    border-radius: 50%;
+    height: var(--profile_photo_width_height);
+    width: var(--profile_photo_width_height);
+    background-color: var(--profile_photo_background_color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 30px 0 30px 0;
+}
+
+.camera_logo_div {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: var(--profile_photo_width_height);
+    height: var(--profile_photo_width_height);
+}
+
+.camera_logo {
+    width: calc(var(--profile_photo_width_height) - 10vh);
+}
+
+.profile_photo_display:hover .camera_logo_div {
+    display: flex;
+}
+
+.profile_photo_width_larger {
+    width: var(--profile_photo_width_height);
+}
+
+.profile_photo_height_larger {
+    height: var(--profile_photo_width_height);
+}
+
+.first_letter {
+    color: var(--white);
+    font-size: var(--xxl);
+}
+
+#bio {
+    margin-top: 20px;
+    border: solid 2px var(--grey);
+    width: 70%;
+    padding: 10px;
+}
+
+.buttons {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.submit, .later {
+    color: var(--white);
+    border-radius: 10px;
+    height: 30px;
+    font-size: var(--s);
+    font-weight: var(--bold);
+    padding: 0 20px 0 20px;
+}
+
+.submit {
+    background-color: var(--blue);
+}
+
+.later {
+    background-color: #D2001A;;
+}
+
+@media (max-width: 555px) {
+    .form {
+        width: 100%;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--My css-->
+    <link rel="stylesheet" href="{{url_for('static', filename='./signup_part3/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='./general.css')}}">
+
+    <link rel="icon" href="{{url_for('static', filename='./images/group.png')}}">
+    <title>Inscription | La Salle</title>
+</head>
+<body>
+    <h1>Configurer Votre Profil</h1>
+    <form action="{{url_for('main')}}" method="GET" class="invisible" id="later_form"></form>
+    <form action="{{url_for('signup_part3')}}" method="POST" class="form">
+        <p>{{error}}</p>
+        <br>
+        <br>
+        <h2>Photographie de Profil</h2>
+        <div class="profile_photo_display">
+            {% if first_letter %}
+            <p class="first_letter">{{first_letter}}</p>
+            {% else %}
+            <p class="first_letter">A</p>
+            {% endif %}
+            <div class="camera_logo_div">
+                <img src="{{url_for('static', filename='./images/camera1.png')}}" class="camera_logo">
+            </div>
+            <img src="" alt="profile photo" class="profile_photo invisible">
+        </div>
+        <input type="file" class="profile_photo_input invisible" accept="image/*">
+        <input type="hidden" name="profile_photo_base64" id="profile_photo_base64">
+        <h2 class="bio_h2">Bio</h2>
+        <input type="text" id="bio" name="bio" rows="4" cols="50" maxlength="255">
+        <div class="buttons">
+            <input type="submit" value="Configurer plus tard" form="later_form" class="later">
+            <input type="submit" value="Suivant" class="submit">
+        </div>
+    </form>
+    <script src="{{url_for('static', filename='./signup_part3/main.js')}}"></script>
+</body>
+</html>

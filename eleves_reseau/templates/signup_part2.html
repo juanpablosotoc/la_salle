@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='./general.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='./signup_part2/styles.css')}}">
+
+    <link rel="icon" href="{{url_for('static', filename='./images/group.png')}}">
+    <title>Inscription | La Salle</title>
+</head>
+<body>
+    {% if error %}
+    <p>{{error}}</p>
+    {% endif %}
+    <h1>Emploi du temps:</h1>
+    <p>À quelle heure finissez-vous les cours pendant la semaine?</p>
+    <form action="/signup_part2" method="POST">
+        <label class="mon" for="mon">Lundi</label>
+        <input type="time" name="mon" id="mon" required>
+        <hr>
+        <label class="tue" for="tue">Mardi</label>
+        <input type="time" name="tue" id="tue" required>
+        <hr>
+        <label class="wed" for="wed">Mercredi</label>
+        <input type="time" name="wed" id="wed" required>
+        <hr>
+        <label class="thu" for="thu">Jeudi</label>
+        <input type="time" name="thu" id="thu" required>
+        <hr>
+        <label class="fri" for="fri">Vendredi</label>
+        <input type="time" name="fri" id="fri" required>
+        <hr>
+        <input type="submit">
+    </form>
+</body>
+</html>

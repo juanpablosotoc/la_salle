@@ -1,0 +1,70 @@
+:root {
+    --personal_photo_width_height: 50px;
+    --profile_photo_width_height: 40px;
+    --profile_view_photo_width_height: 200px;
+}
+
+nav {
+    padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 1px var(--grey);
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: var(--bold);
+}
+
+.profile_photo_display {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: var(--profile_photo_width_height);
+    width: var(--profile_photo_width_height);
+}
+
+.personal_photo_display {
+    height: var(--personal_photo_width_height);
+    width: var(--personal_photo_width_height);
+}
+
+.profile_photo_width_larger {
+    width: var(--profile_photo_width_height);
+}
+
+.profile_photo_height_larger {
+    height: var(--profile_photo_width_height);
+}
+
+.personal_profile_photo.profile_photo_width_larger {
+    width: var(--personal_photo_width_height);
+}
+
+.personal_profile_photo.profile_photo_height_larger {
+    height: var(--personal_photo_width_height);
+}
+
+.messenger_icon, .networking_icon, .home_icon, .searching_bar_icon {
+    height: calc(var(--personal_photo_width_height) - 20px); 
+    width: calc(var(--personal_photo_width_height) - 20px); 
+}
+
+nav .profile_photo_display {
+    height: var(--personal_photo_width_height);
+    width: var(--personal_photo_width_height);
+    background-color: var(--grey);
+}
+
+nav .profile_photo_display .profile_photo_width_larger {
+    width: var(--personal_photo_width_height);
+}
+
+nav .profile_photo_display .profile_photo_height_larger {
+    height: var(--personal_photo_width_height);
+}

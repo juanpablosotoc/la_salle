@@ -1,0 +1,16 @@
+{% extends "view_user_template.html" %}
+
+{% block head_x %}
+<link rel="stylesheet" href="{{url_for('static', filename='./account/styles.css')}}">
+{% endblock %}
+
+{% block edit_profile %}
+<a href="/edit_profile">Modifier le profil</a>
+{% endblock %}
+
+{% block js_x %}
+<script src="{{url_for('static', filename='./account/main.js')}}"></script>
+
+<script src="{{url_for('static', filename='./logged_in.js')}}"></script>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+.all {
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+input {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: var(--s);
+    font-weight: var(--med);
+}
+
+input:hover {
+    cursor: pointer;
+}
+
+.inv {
+    display: flex;
+}
+
+.inv h2 {
+    width: 100%;
+}
+
+
+.users {
+    border: 1px solid var(--grey);
+    margin: 30px 0;
+}
+
+.users > a {
+    width: 70%;
+    border-bottom: 1px solid var(--grey);
+    transform: translateX(-50%);
+    margin-left: 50%;
+    padding: 20px 0;
+    text-decoration: none;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile_photo_display {
+    background-color: var(--grey);
+}
+
+.profile_photo_display p {
+    color: var(--white);
+}
+
+.username , .profile_photo_display p {
+    font-weight: var(--bold);
+}
+
+@media (max-width: 750px) {
+    .all {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        transform: translateX(0);
+    }
+}

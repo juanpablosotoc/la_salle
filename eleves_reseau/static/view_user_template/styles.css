@@ -1,0 +1,32 @@
+.profile_view {
+    margin-bottom: 30px;
+}
+
+.top_section {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--grey);
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile_view a {
+    text-decoration: none;
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: var(--s);
+    font-weight: var(--med);
+}
+
+.username {
+    font-weight: var(--bold);
+}
+
+.internship_info {
+    margin-bottom: 15px;
+    text-align: center;
+}

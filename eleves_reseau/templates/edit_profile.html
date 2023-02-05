@@ -1,0 +1,79 @@
+{% extends "logged_in.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='./edit_profile/styles.css')}}">
+<title>La Salle</title>
+{% endblock %}
+
+{% block content %}
+<button onclick="history.back()" class="go_back"><img src="{{url_for('static', filename='./images/arrow.png')}}" alt="go back arrow"></button>
+<form action="/edit_profile" method="POST">
+    <div class="profile_photo_div">
+        {% if profile_photo_base64 %}
+        <img src="{{profile_photo_base64}}" alt="profile photo" class="profile_photo_edit">
+        {% else %}
+        <p class="profile_photo_letter">{{username[0].upper()}}</p>
+        {% endif %}
+        <div class="camera_logo_div">
+            <img src="{{url_for('static', filename='./images/camera1.png')}}" class="camera_logo">
+        </div>
+    </div>
+    <input type="hidden" class="image_base_64" value="{{profile_photo_base64}}" name="profile_photo_base64" id="profile_photo_base64">
+    <input type="file" class="invisible" accept="image/*">
+    <p>Bio</p>
+    <input type="text" value="{{bio}}" name="bio" id="bio">
+    <p>Prénom</p>
+    <input type="text" value='{{name}}' name="name" id="name" required>
+    <br>
+    <div class="internship_div">
+        <p class="internship">{{internship}}</p>
+        <input type="radio" name="internship" id="home" value="Externe" required checked>
+        <label for="home">Externe</label>
+        <br>
+        <input type="radio" name="internship" id="demi-pensionnaire" value="Demi-pensionnaire" required>
+        <label for="demi-pensionnaire">Demi-pensionnaire</label>
+        <br>
+        <input type="radio" name="internship" id="internship" value="Interne" required>
+        <label for="internship">Interne</label>
+    </div>
+    <br>
+    <table>
+        <tr>
+            <th>Lundi</th>
+            <th>Mardi</th>
+            <th>Mercredi</th>
+        </tr>
+        <tr>
+            <td>{{lundi}}</td>
+            <td>{{mardi}}</td>
+            <td>{{mercredi}}</td>
+        </tr>
+        <tr>
+            <td><input type="time" name="mon" id="mon"></td>
+            <td><input type="time" name="tue" id="tue"></td>
+            <td><input type="time" name="wed" id="wed"></td>
+        </tr>
+        <tr>
+            <th>Jeudi</th>
+            <th>Vendredi</th>
+        </tr>
+        <tr>
+            <td>{{jeudi}}</td>
+            <td>{{vendredi}}</td>
+        </tr>
+        <tr>
+            <td><input type="time" name="thu" id="thu"></td>
+            <td><input type="time" name="fri" id="fri"></td>
+        </tr>
+    </table>
+    <br>
+    <input type="submit" value="Soumettre">
+</form>
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static', filename='./edit_profile/main.js')}}"></script>
+
+<script src="{{url_for('static', filename='./logged_in1.js')}}"></script>
+
+{% endblock %}

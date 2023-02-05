@@ -1,0 +1,77 @@
+
+h1 {
+    font-weight: var(--light);
+}
+
+h1, h2 {
+    font-size: var(--l);
+    text-align: center;
+    padding: 30px 0 20px 0;
+}
+
+.content {
+    display: flex;
+    padding: 5vh 40px 40px 40px;
+    gap: 5vw;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.overview {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.overview p {
+    font-size: 30px;
+    text-align: end;
+    font-weight: 600;
+}
+
+.overview p span {
+    color: #D2001A;
+}
+
+.overview img {
+    width: 200px;
+    height: auto;
+}
+
+.login, .signup {
+    border: solid 1px var(--grey);
+    padding: 20px;
+    margin-bottom:40px;
+}
+
+.error {
+    color: red;
+}
+
+input[type='text'], input[type='password'] {
+    padding: 3px;
+    border: solid var(--black) 1px;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    height: 3ch;
+}
+
+input[type='submit'] {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+    height: 30px;
+    width: 100%;
+    margin: 20px 0 0 0;
+    font-size: var(--s);
+    font-weight: var(--med);
+}
+
+@media (max-width: 853px) {
+    .overview {
+        align-items: center;
+    }
+    .overview p {
+        text-align: center;
+    }
+}

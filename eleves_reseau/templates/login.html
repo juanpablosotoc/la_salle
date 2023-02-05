@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--My CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='./login/styles.css')}}">    
+    <link rel="stylesheet" href="{{url_for('static', filename='./general.css')}}">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,300;0,600;1,100&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="{{url_for('static', filename='./images/group.png')}}">
+    <title>La Salle</title>
+</head>
+<body>
+    <h1><i>La Salle Saint Nicolas</i></h1>
+    <div class="content">
+        <div class="overview">
+            <p class="quote">Pour être toujours <span>connecté</span><br>à ce qui se passe.</p>
+            <img src="https://www.st-nicolas.org/content/themes/stnicolas/dist/images/logo.png" alt="la salle saint nicolas logo">
+        </div>
+        <div class="login_signup">
+            <div class="login">
+                <h2>La Salle</h2>
+                <p class="error">{{error}}</p>
+                <form action="/" method="POST">
+                    <input type="text" name="username" id="username" placeholder="nom d’utilisateur" autocomplete="username">
+                    <br>
+                    <input type="password" name="password" id="password" placeholder="Mot de passe" autocomplete="current-password">
+                    <br>
+                    <input type="submit" value="Se connecter">
+                </form>
+            </div>
+            <div class="signup">
+                <p>Vous n'avez pas de compte? <a href="{{url_for('signup')}}">Inscrivez-vous</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends "logged_in.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename='./home/styles.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="tweeting">
+    {% for tweet in tweets %} 
+    <div class="tweet_div">
+        <p class="tweet_id invisible">{{tweet['id']}}</p>
+        <a href="{{url_for('view_user', seeing_username=tweet['username'])}}" class="tweet_head">
+            <div class="profile_photo_display">
+                {% if tweet['profile_photo'] %}
+                <img src="{{tweet['profile_photo']}}" alt="profile photo" class="personal_profile_photo tweet_profile_photo">
+                {% else %}
+                <p class="profile_photo_letter">{{tweet['username'][0].upper()}}</p>
+                {% endif %}
+            </div>
+            <p>{{tweet['username']}}</p>
+        </a>
+        <p class="tweet_p">{{tweet['tweet']}}</p>
+        <p class="date_p">{{tweet['date']}}</p>
+    </div>
+    {% endfor %} 
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="{{url_for('static', filename='./home/main.js')}}"></script>
+
+<script src="{{url_for('static', filename='./logged_in1.js')}}"></script>
+
+{% endblock %}

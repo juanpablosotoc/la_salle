@@ -1,0 +1,92 @@
+:root {
+    --tweet_photo_width_height: 50px;
+}
+
+.profile_view {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border: solid 1px var(--grey);
+    padding: 30px 0 30px 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.profile_view .personal_photo_display {
+    width: var(--profile_view_photo_width_height);
+    height: var(--profile_view_photo_width_height);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile_view .personal_photo_display .profile_photo_letter {
+    color: var(--white);
+    font-weight: var(--bold);
+    font-size: var(--xxl);
+}
+
+.profile_photo_display p {
+    color: var(--white);
+    font-weight: var(--bold);
+}
+
+.profile_view .profile_photo_width_larger {
+    width: var(--profile_view_photo_width_height);
+}
+
+.profile_view .profile_photo_height_larger {
+    height: var(--profile_view_photo_width_height);
+}
+
+.profile_photo_display {
+    height: var(--tweet_photo_width_height);
+    width: var(--tweet_photo_width_height);
+    background-color: var(--grey);
+}
+
+.profile_photo_display .profile_photo_width_larger {
+    width: var(--tweet_photo_width_height);
+}
+
+.profile_photo_display .profile_photo_height_larger {
+    height: var(--tweet_photo_width_height);
+}
+
+.date_p {
+    color: var(--darkGrey);
+}
+
+
+@media (max-width: 700px) {
+    .profile_view {
+        width: 100%;
+        margin-left: 0;
+        transform: translateX(0);
+    }
+
+    .tweeting {
+        width: 100%;
+        transform: translateX(0);
+        margin: 30px 0 30px 0;
+        padding: 0;
+    }
+
+    .tweeting > div {
+        width: 70%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    h2 {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--My css-->
+    <link rel="stylesheet" href="{{url_for('static', filename='./signup/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='./general.css')}}">
+    
+    <link rel="icon" href="{{url_for('static', filename='./images/group.png')}}">
+    <title>Inscription | La Salle</title>
+</head>
+<body>
+    <h1><i>La Salle Saint Nicolas</i></h1>
+    <p class="invitation">Inscrivez-vous pour trouver des amis à La Salle.</p>
+    <div class="content">
+        <h2>La Salle</h2>
+        <p class="error">{{error}}</p>
+        <form action="{{url_for('signup')}}" method="POST">
+            <label for="username">Nom d’utilisateur</label>
+            <input type="text" name="username" id="username" required>
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" id="password" required>
+            <label for="name">Prénom</label>
+            <input type="text" name="name" id="name" required autocomplete="given-name">
+            <label for="grade_id">Classe</label>
+            <select name="grade_id" id="grade_id">
+                <option value="12">Terminale</option>
+                <option value="11">Première</option>
+                <option value="10">Seconde</option>
+                <option value="9">Troisième</option>
+                <option value="8">Quatrième</option>
+                <option value="7">Cinquième</option>
+                <option value="6">Sixième</option>
+            </select>
+            <br>
+            <input type="radio" name="internship" id="home" value="Externe" required checked>
+            <label for="home">Externe</label>
+            <br>
+            <input type="radio" name="internship" id="demi-pensionnaire" value="Demi-pensionnaire" required>
+            <label for="demi-pensionnaire">Demi-pensionnaire</label>
+            <br>
+            <input type="radio" name="internship" id="internship" value="Interne" required>
+            <label for="internship">Interne</label>
+            <input type="submit" value="Suivant">
+        </form>
+    </div>
+</body>
+</html>
